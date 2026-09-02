@@ -1,13 +1,13 @@
 {% set python_min = "3.11" %}
-{% set version = "0.1.5" %}
+{% set version = "0.2.0" %}
 
 package:
   name: fractal-tasks-utils
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/f/fractal-tasks-utils/fractal_tasks_utils-{{ version }}.tar.gz
-  sha256: 49609b5dd4900e2778910c1e68f8565f3a23b750dad339c823c067013034fc37
+  url: https://files.pythonhosted.org/packages/source/f/fractal-tasks-utils/fractal_tasks_utils-{{ version }}.tar.gz
+  sha256: 9ee8c775599f5658e4ae4825372f767ac3a50fafd62ed76e76b9dd202d789495
 
 build:
   noarch: python
@@ -21,8 +21,9 @@ requirements:
     - hatch-vcs
     - pip
   run:
+    - pandas
     - python >={{ python_min }}
-    - ngio >0.5.0,<0.6.0
+    - ngio >=1.1.0,<1.2
     - pydantic
     - numpy
     - scikit-image
